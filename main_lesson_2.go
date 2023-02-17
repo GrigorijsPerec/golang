@@ -70,23 +70,6 @@ func task6() {
 	fmt.Print(x2)
 }
 
-func task7() {
-	a := 1
-	b := 2
-	c := 3
-	d := 2
-	count := 4
-	if a == b {
-		count--
-	}
-	if a == c || b == c {
-		count--
-	}
-	if a == d || b == d || c == d {
-		count--
-	}
-	fmt.Println(count)
-}
 
 func main() {
 	//task1()
@@ -95,5 +78,5 @@ func main() {
 	//task4()
 	//task5()
 	//task6()
-	task7()
+
 }
