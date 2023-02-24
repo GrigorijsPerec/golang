@@ -116,10 +116,38 @@ func task5() {
 	fmt.Print(max)
 	fmt.Print(median)
 }
+func task6() {
+	var P, P1, Q, Q1 float64
+	fmt.Scan(&P)
+	fmt.Scan(&Q)
+	P1 = 1
+	Q1 = 3
+	if P1 == P || Q1 == Q {
+		print("Yes")
+	} else {
+		print("No")
+	}
+}
+func task7() {
+	var a, b, c float64
+	fmt.Println("Введите длины сторон треугольника:")
+	fmt.Scan(&a, &b, &c)
+
+	if a+b > c && a+c > b && b+c > a {
+
+		p := (a + b + c) / 2
+		s := math.Sqrt(p * (p - a) * (p - b) * (p - c))
+		fmt.Printf("Площадь треугольника: ", s)
+	} else {
+		fmt.Println("Треугольник не существует")
+	}
+}
 func main() {
 	task1()
 	task2()
 	task3()
 	task4()
 	task5()
+	task6()
+	task7()
 }
