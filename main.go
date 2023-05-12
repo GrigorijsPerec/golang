@@ -1,29 +1,36 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func isPrime(n int) bool {
-	if n < 2 {
-		return false
-	}
-	for i := 2; i*i <= n; i++ {
-		if n%i == 0 {
-			return false
-		}
-	}
-	return true
-}
+const (
+	width  = 5
+	height = 4
+)
 
 func main() {
-	var d, q, i int
-	fmt.Scan(&d)
-	if d%2 != 0 {
-		return
-	}
-	for i = 2; q < 10; i++ {
-		if isPrime(i) && isPrime(d+i) {
-			fmt.Println(i, d+i)
-			q++
+	var arr [5][5]int
+
+	for row := 0; row < width; row++ {
+		for col := 0; col < height; col++ {
+			if col%2 == 0 && row%2 == 0 {
+				arr[row][col] = 1
+			} else if col%2 == 0 && row%2 == 1 {
+				arr[row][col] = 0
+			} else if col%2 == 1 && row%2 == 0 {
+				arr[row][col] = 0
+			} else {
+				arr[row][col] = 1
+			}
+
 		}
 	}
+	for row := 0; row < width; row++ {
+		for col := 0; col < height; col++ {
+			fmt.Print(arr[row][col], " ")
+		}
+		fmt.Println()
+	}
+
 }
